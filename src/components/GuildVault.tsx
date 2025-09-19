@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Eye, EyeOff, Lock, Users, Zap, Crown } from "lucide-react";
-import { Coins, Gem, Sword, Armor, Magic } from "lucide-react";
+import { Coins, Gem, Sword, Shield, Zap } from "lucide-react";
 import { useCipherHoardGuard } from "@/hooks/useContract";
 import { formatEther } from "viem";
 
@@ -43,7 +43,7 @@ const mockVaultData = [
     depositor: "0x...7h9k",
     timestamp: "2 days ago",
     encrypted: true,
-    icon: Armor,
+    icon: Shield,
     color: "text-hologram-blue"
   },
   {
@@ -53,7 +53,7 @@ const mockVaultData = [
     depositor: "0x...1a5f",
     timestamp: "3 days ago",
     encrypted: true,
-    icon: Magic,
+    icon: Zap,
     color: "text-encryption-glow"
   }
 ];
