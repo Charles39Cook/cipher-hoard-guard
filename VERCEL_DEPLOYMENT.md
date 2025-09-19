@@ -48,9 +48,9 @@ In the Vercel dashboard, go to the project settings and add these environment va
 
 ```
 VITE_CHAIN_ID=11155111
-VITE_RPC_URL=https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990
-VITE_WALLET_CONNECT_PROJECT_ID=2ec9743d0d0cd7fb94dee1a7e6d33475
-VITE_INFURA_API_KEY=b18fb7e6ca7045ac83c41157ab93f990
+VITE_RPC_URL=your_rpc_url_here
+VITE_WALLET_CONNECT_PROJECT_ID=your_project_id_here
+VITE_INFURA_API_KEY=your_infura_key_here
 ```
 
 ### How to Add Environment Variables

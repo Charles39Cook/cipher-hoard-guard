@@ -1,4 +1,4 @@
-import { Shield, Lock } from "lucide-react";
+import { Lock, Eye, Zap } from "lucide-react";
 import dragonLogo from "@/assets/dragon-vault-logo.png";
 
 export const VaultHeader = () => {
@@ -35,12 +35,12 @@ export const VaultHeader = () => {
           {/* Security Indicators */}
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-vault-stone/50 border border-hologram-blue/30">
-              <Shield className="w-4 h-4 text-hologram-blue" />
+              <Zap className="w-4 h-4 text-hologram-blue" />
               <span className="text-xs font-tech text-hologram-blue">FHE Active</span>
             </div>
             <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-vault-stone/50 border border-encryption-glow/30">
-              <Lock className="w-4 h-4 text-encryption-glow" />
-              <span className="text-xs font-tech text-encryption-glow">Encrypted</span>
+              <Eye className="w-4 h-4 text-encryption-glow" />
+              <span className="text-xs font-tech text-encryption-glow">Dragon Guard</span>
             </div>
           </div>
         </div>

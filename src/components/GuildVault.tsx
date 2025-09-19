@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Eye, EyeOff, Lock, Shield, Users } from "lucide-react";
-import { Coins, Gem, Sword, Shield as ShieldIcon, Zap } from "lucide-react";
+import { Eye, EyeOff, Lock, Users, Zap, Crown } from "lucide-react";
+import { Coins, Gem, Sword, Armor, Magic } from "lucide-react";
 import { useCipherHoardGuard } from "@/hooks/useContract";
 import { formatEther } from "viem";
 
@@ -43,7 +43,7 @@ const mockVaultData = [
     depositor: "0x...7h9k",
     timestamp: "2 days ago",
     encrypted: true,
-    icon: ShieldIcon,
+    icon: Armor,
     color: "text-hologram-blue"
   },
   {
@@ -53,7 +53,7 @@ const mockVaultData = [
     depositor: "0x...1a5f",
     timestamp: "3 days ago",
     encrypted: true,
-    icon: Zap,
+    icon: Magic,
     color: "text-encryption-glow"
   }
 ];
@@ -94,9 +94,9 @@ export const GuildVault = () => {
         
         <Card className="resource-card text-center">
           <CardContent className="pt-6">
-            <Shield className="w-8 h-8 text-vault-gold mx-auto mb-2" />
+            <Crown className="w-8 h-8 text-vault-gold mx-auto mb-2" />
             <p className="text-2xl font-bold text-foreground">100%</p>
-            <p className="text-sm font-tech text-vault-gold">Encryption Rate</p>
+            <p className="text-sm font-tech text-vault-gold">Dragon Protection</p>
           </CardContent>
         </Card>
         

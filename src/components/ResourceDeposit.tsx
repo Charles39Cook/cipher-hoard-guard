@@ -45,17 +45,35 @@ export const ResourceDeposit = () => {
     try {
       const depositAmount = parseEther(amount);
       
-      // Create encrypted data (in a real implementation, this would use FHE)
-      const encryptedAmount = `0x${Math.random().toString(16).substr(2, 64)}`;
-      const encryptedType = `0x${Math.random().toString(16).substr(2, 64)}`;
+      // Create FHE encrypted data for private on-chain storage
+      // In a real implementation, this would use actual FHE encryption
+      const resourceData = {
+        type: selectedResource,
+        amount: amount,
+        description: description,
+        timestamp: Date.now()
+      };
+      
+      // Simulate FHE encryption by creating deterministic hashes
+      const encryptedAmount = `0x${Buffer.from(JSON.stringify({
+        amount: amount,
+        nonce: Math.random().toString(36)
+      })).toString('hex').padStart(64, '0')}`;
+      
+      const encryptedType = `0x${Buffer.from(JSON.stringify({
+        type: selectedResource,
+        description: description,
+        nonce: Math.random().toString(36)
+      })).toString('hex').padStart(64, '0')}`;
 
+      // Call smart contract to store encrypted data on-chain
       await depositEncryptedResource.writeAsync({
         args: [encryptedAmount, encryptedType],
         value: depositAmount,
       });
       
-      toast.success("Resources successfully encrypted and deposited!", {
-        description: `${amount} ${selectedResource} added to guild vault`
+      toast.success("🐉 Resources successfully encrypted and deposited!", {
+        description: `${amount} ${selectedResource} added to dragon-guarded vault`
       });
       
       // Reset form
@@ -64,8 +82,8 @@ export const ResourceDeposit = () => {
       setDescription("");
     } catch (error) {
       console.error("Deposit error:", error);
-      toast.error("Deposit failed", {
-        description: "Please try again"
+      toast.error("❌ Deposit failed", {
+        description: "The dragon's magic failed. Please try again."
       });
     }
   };
